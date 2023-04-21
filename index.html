@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>Loading Screen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        /* CSS to center the logo and show the loading spinner */
+        /* CSS to center the logo */
         .loading-container {
             position: fixed;
             top: 0;
@@ -20,36 +21,19 @@
             max-width: 200px; /* Set the desired width of your logo */
             max-height: 200px; /* Set the desired height of your logo */
             margin-bottom: 1rem;
-            animation: rotate 2s linear infinite; /* Add the animation effect to the logo */
-        }
-
-        @keyframes rfadeAndFan {
-            0% {
-                opacity: 0;
-                transform: rotate(0deg) scaleY(0.5); /* Set initial rotation and scale values */
-            }
-            50% {
-                opacity: 1; /* Set opacity to 1 at halfway point */
-            }
-            100% {
-                opacity: 1;
-                transform: rotate(360deg) scaleY(1); /* Set final rotation and scale values */
-            }
         }
     </style>
-    <script>
-        window.onload = function() {
-            setTimeout(function() {
-                // Hide the loading screen after 3 seconds
-                document.getElementById('loading-container').style.display = 'none';
-            }, 3000);
-        }
-    </script>
 </head>
 <body>
-    <div id="loading-container" class="loading-container">
-        <img src="https://i.imgur.com/hAhPyFO.png" alt="RKM_Emblem_RGB_Black_V22_1" class="logo"> <!-- Replace "https://i.imgur.com/hAhPyFO.png" with the URL of your logo image on Imgur -->
+    <div class="loading-container">
+        <img src="https://i.imgur.com/hAhPyFO.png" alt="Logo" class="logo animate__animated animate__rotateIn">
     </div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.loading-container').style.display = 'none';
+        }, 3000); // 3 seconds
+    </script>
+    <!-- Your body content here -->
     <p>Hello, World!</p>
 </body>
 </html>
