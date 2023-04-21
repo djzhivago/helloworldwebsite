@@ -3,7 +3,7 @@
 <head>
     <title>Loading Screen</title>
     <style>
-        /* CSS to center the logo */
+        /* CSS to center the logo and show the loading spinner */
         .loading-container {
             position: fixed;
             top: 0;
@@ -20,6 +20,13 @@
             max-width: 200px; /* Set the desired width of your logo */
             max-height: 200px; /* Set the desired height of your logo */
             margin-bottom: 1rem;
+            animation: rotate 2s linear infinite; /* Add the animation effect to the logo */
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
     <script>
