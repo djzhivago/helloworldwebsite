@@ -2,9 +2,8 @@
 <html>
 <head>
     <title>Loading Screen</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        /* CSS to center the logo */
+        /* CSS to center the loading spinner */
         .loading-container {
             position: fixed;
             top: 0;
@@ -17,23 +16,39 @@
             justify-content: center;
         }
 
+        .loading-logo {
+            max-width: 100px; /* Set the desired width of your loading logo */
+            max-height: 100px; /* Set the desired height of your loading logo */
+            /* Add any additional styles for your loading logo here */
+        }
+
         .logo {
-            max-width: 200px; /* Set the desired width of your logo */
-            max-height: 200px; /* Set the desired height of your logo */
-            margin-bottom: 1rem;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            max-width: 100px; /* Set the desired width of your logo */
+            max-height: 100px; /* Set the desired height of your logo */
+            opacity: 0;
+            animation: fade-in 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <div class="loading-container">
-        <img src="https://i.imgur.com/hAhPyFO.png" alt="Logo" class="logo animate__animated animate__rotateIn">
+        <img src="https://imgur.com/hAhPyFO" alt="Loading" class="loading-logo"> <!-- Replace "https://imgur.com/hAhPyFO" with the URL of your actual loading screen image -->
     </div>
+    <img src="https://imgur.com/ZOiKbPy" alt="Logo" class="logo"> <!-- Replace "https://imgur.com/ZOiKbPy" with the URL of your actual logo image -->
     <script>
-        setTimeout(function(){
-            document.querySelector('.loading-container').style.display = 'none';
-        }, 3000); // 3 seconds
+        // Wait for 3 seconds and then navigate to the main page
+        setTimeout(function() {
+            window.location.href = "mainpage.html"; // Replace "mainpage.html" with the actual name of your main page file
+        }, 3000); // Adjust the duration in milliseconds (ms) as needed
     </script>
-    <!-- Your body content here -->
-    <p>Hello, World!</p>
 </body>
 </html>
