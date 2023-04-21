@@ -38,14 +38,22 @@
             }
         }
     </style>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("body-content").style.display = "block";
+                document.getElementById("loading-container").style.display = "none";
+            }, 3000); // Delay for 3 seconds (3000 milliseconds)
+        }
+    </script>
 </head>
 <body>
-    <div class="loading-container">
-        <img src="C:\Users\k220081\OneDrive - Alliance\바탕 화면\디자인파일\vi\rkm\RKM_EMBLEM_V22_1\PNG_SVG\RKM_Emblem_RGB_Black_V22_1.png" alt="RKM_Emblem_RGB_Black_V22_1" class="RKM_Emblem_RGB_Black_V22_1"> <!-- Replace "your-logo-file.png" with the path to your actual logo file -->
+    <div id="loading-container" class="loading-container">
+        <img src="file:///C:/Users/k220081/OneDrive%20-%20Alliance/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%8C%EC%9D%BC/vi/rkm/RKM_EMBLEM_V22_1/PNG_SVG/RKM_Emblem_RGB_Black_V22_1.png" alt="RKM_Emblem_RGB_Black_V22_1" class="logo"> <!-- Replace the file path with the actual file path of your logo file -->
         <div class="spinner"></div>
     </div>
-     <p>Hello, World!</p>
+    <div id="body-content" style="display:none;">
+        <p>Hello, World!</p>
+    </div>
 </body>
 </html>
-
-
