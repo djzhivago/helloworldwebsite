@@ -3,52 +3,38 @@
 <head>
     <title>Loading Screen</title>
     <style>
-        /* CSS to center the loading spinner */
-        .loading-container {
+        /* Set the size and position of the loading screen */
+        .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #ffffff; /* Choose your desired background color */
+            background-color: #ffffff; /* Set the desired background color */
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+            z-index: 9999; /* Set a higher z-index value to ensure the loading screen appears on top of other elements */
+            transition: opacity 1s ease-in-out; /* Add transition effect for opacity */
         }
 
-        .loading-logo {
-            max-width: 100px; /* Set the desired width of your loading logo */
-            max-height: 100px; /* Set the desired height of your loading logo */
-            /* Add any additional styles for your loading logo here */
-        }
-
-        .logo {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            max-width: 100px; /* Set the desired width of your logo */
-            max-height: 100px; /* Set the desired height of your logo */
-            opacity: 0;
-            animation: fade-in 1s ease-out 0.5s forwards;
-        }
-
-        @keyframes fade-in {
-            to {
-                opacity: 1;
-            }
+        /* Set opacity to 1 when the loading screen is active */
+        .loading-screen.active {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="loading-container">
-        <img src="https://imgur.com/hAhPyFO" alt="Loading" class="loading-logo"> <!-- Replace "https://imgur.com/hAhPyFO" with the URL of your actual loading screen image -->
+    <div class="loading-screen active"> <!-- Add "active" class to initially show the loading screen with opacity 1 for fade-in effect -->
+        <img src="https://imgur.com/hAhPyFO" alt="Loading Screen Image"> <!-- Replace "https://imgur.com/hAhPyFO" with the URL of your actual loading screen image -->
     </div>
-    <img src="https://imgur.com/ZOiKbPy" alt="Logo" class="logo"> <!-- Replace "https://imgur.com/ZOiKbPy" with the URL of your actual logo image -->
+
     <script>
-        // Wait for 3 seconds and then navigate to the main page
         setTimeout(function() {
-            window.location.href = "mainpage.html"; // Replace "mainpage.html" with the actual name of your main page file
-        }, 3000); // Adjust the duration in milliseconds (ms) as needed
+            document.querySelector('.loading-screen').classList.remove('active'); // Remove "active" class after 3 seconds to fade out the loading screen
+            window.location.href = "mainpage.html"; // Redirect to mainpage.html after 3 seconds (3000 milliseconds)
+        }, 3000);
     </script>
 </body>
 </html>
